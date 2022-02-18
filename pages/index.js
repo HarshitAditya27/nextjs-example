@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
 
 import mainstyles from '../styles/index.module.css'
 
@@ -25,38 +27,52 @@ export default function Home() {
                 <nav
                   className="nav_m nav navbar navbar-expand-lg navbar-light primary-menu"
                 >
-                  <a href="/" className={mainstyles.navbarbrand}>
-                    <img className={mainstyles.navbar_logo}
-                      src="/logo.jpg" alt="Logo" />
-                  </a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                  <Link href="/" >
+                    <div className={mainstyles.navbarbrand}>
+                      <Image
+                        className={mainstyles.navbar_logo}
+                        src="/logo.jpg"
+                        height={80}
+                        width={80} />
+                    </div>
+                  </Link>
+                  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
-                    onclick="onToggle()">
-                    <span class="navbar-toggler-icon"></span>
+                    onClick="onToggle()">
+                    <span className="navbar-toggler-icon"></span>
                   </button>
                   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar_nav ml-auto d-flex justify-content-between">
+
                       <span className="d-flex">
-                        <a href="/" className="nav-link active styling__nav__link">
-                          Home
-                        </a>
-
-                        <a href="/" className="nav-link styling__nav__link"> Pricing </a>
-
-                        <a href="/" className="nav-link styling__nav__link"> Docs </a>
-
-                        <a href="/" className="nav-link styling__nav__link">
-                          Resources
-                        </a>
-
-                        <a href="/" className="nav-link styling__nav__link">
-                          Contact Us
-                        </a>
+                        <div className="nav-link active styling__nav__link">
+                          <Link href="/" >
+                            Home
+                          </Link>
+                        </div>
+                        <div className="nav-link active styling__nav__link">
+                          <Link href="/" >  Pricing  </Link>
+                        </div>
+                        <div className="nav-link active styling__nav__link">
+                          <Link href="/" >  Docs  </Link>
+                        </div>
+                        <div className="nav-link active styling__nav__link">
+                          <Link href="/" >
+                            Resources
+                          </Link>
+                        </div>
+                        <div className="nav-link active styling__nav__link">
+                          <Link href="/" >
+                            Contact Us
+                          </Link>
+                        </div>
                       </span>
                       <span>
-                        <a href="/login" className="btn btn-warning">
-                          Login <i class="fa fa-sign-in" aria-hidden="true"></i>
-                        </a>
+                        <Link href="/login">
+                          <div className="btn btn-warning">
+                            <i className="fa fa-sign-in" aria-hidden="true">Login </i>
+                          </div>
+                        </Link>
                       </span>
                     </div>
                   </div>
@@ -76,16 +92,17 @@ export default function Home() {
           </div>
           <div className={mainstyles.feature_cards}>
             <div className="feature_cards row">
-              <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="card mb-4 mx-auto">
-                  <div class="card-body">
-                    <h5 class="card-title">Feature 1</h5>
-                    <p class="card-text">
+              <div className="col-xs-12 col-sm-6 col-md-4">
+                <div className="card mb-4 mx-auto">
+                  <div className="card-body">
+                    <h5 className="card-title">Feature 1</h5>
+                    <p className="card-text">
                       Some quick example text to build on the card title and make up
                       the bulk of the card's content.
                     </p>
-
-                    <a href="/" class="btn btn-warning"> Go somewhere </a>
+                    <div className="btn btn-warning">
+                      <Link href="/" className="btn btn-warning"> Go somewhere </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -97,8 +114,9 @@ export default function Home() {
                       Some quick example text to build on the card title and make up
                       the bulk of the card's content.
                     </p>
-
-                    <a href="/" className="btn btn-warning"> Go somewhere </a>
+                    <div className="btn btn-warning">
+                      <Link href="/" className="btn btn-warning"> Go somewhere </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -110,8 +128,9 @@ export default function Home() {
                       Some quick example text to build on the card title and make up
                       the bulk of the card's content.
                     </p>
-
-                    <a href="/" className="btn btn-warning"> Go somewhere </a>
+                    <div className="btn btn-warning">
+                      <Link href="/" >  Go somewhere</Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -126,58 +145,3 @@ export default function Home() {
 
   )
 }
-/*
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Hello <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-*/
