@@ -19,11 +19,11 @@ function login() {
 
     return (
 
-        <div class={lstyles.container}>
+        <div className={lstyles.container}>
             <Head>
                 <title>Login</title>
             </Head>
-            <div class={lstyles.login_container}>
+            <div className={lstyles.login_container}>
                 <h1>Login</h1>
                 <SawoLogin config={sawoConfig} />
             </div>
@@ -34,11 +34,3 @@ function login() {
 };
 
 export default login;
-
-/*       <div class={lstyles.container}>
-            <div class={lstyles.login_container}>
-                
-            </div>
-        </div>
-
-*/
